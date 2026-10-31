@@ -1,0 +1,33 @@
+---
+description: gamified3D project overview
+alwaysApply: true
+---
+
+# gamified3D overview
+
+Game-style 3D / 2.5D scenes for the web on three.js. Companion to gamifiedUI
+(c:\Users\kason\Desktop\gamifiedUI): gamifiedUI owns CSS UI (HUD, panels, icons, CSS-only `gx-iso`
+scenes); gamified3D owns anything that needs WebGL. Never put CSS components here, and never put
+three.js code in gamifiedUI.
+
+## Layout (npm workspaces)
+
+- `packages/*` - one package per module, each with its own `LICENSE`, `NOTICE` and `CHANGELOG.md`.
+- `three` is a peer dependency of every package, never bundled.
+
+## Design contract
+
+- Renderers take state in (actor positions, time of day, weather) and draw it; they hold no game
+  logic and do not depend on Phaser or any framework.
+- Respect reduced motion: ambient animation (water, smoke, villagers) stops when the host passes
+  `isReducedMotion`.
+- Palettes default to gamifiedUI's era themes so the HUD and the world match.
+
+## Commands (PowerShell; no `&&` chaining in docs)
+
+- `npm install`.
+
+## Planned packages
+
+- `gamified3d-diorama` - low-poly diorama renderer, ported from StoryTelling
+  `frontend/src/game/views/lowPolyView.ts` and `frontend/src/game/lowpoly/*`.

@@ -1,0 +1,26 @@
+---
+description: Project licence (Apache 2.0), notices, dependencies and porting modules from spatial / StoryTelling
+globs: LICENSE,NOTICE,**/package.json,**/README.md,packages/**
+alwaysApply: false
+---
+
+# Licence and module sources
+
+- gamifiedUI is licensed under the **Apache License 2.0** (SPDX `Apache-2.0`), the same as
+  `track-changes`.
+- Every package has its own `LICENSE` (full Apache 2.0 text) and `NOTICE` (copyright line), both
+  listed in `files`. `"license"` in every `package.json` is `Apache-2.0`.
+- Keep `NOTICE` short: product name, copyright, attribution. Add a line only when bundled
+  third-party Apache-2.0 code requires its own NOTICE text to be carried.
+- Dependencies must be permissive (MIT, Apache-2.0, ISC, BSD, OFL for fonts). No GPL/AGPL.
+- Contributions are accepted under Apache 2.0 section 5 (inbound = outbound); no CLA needed.
+
+## Porting modules from spatial and StoryTelling
+
+Both are the maintainer's own projects and consume these packages back. When porting:
+
+1. Copy the module and its test; replace imports of the host app's constants, stores and types
+   with options whose defaults equal the host's current values.
+2. Strip host branding (HKU colours, product names) and anything domain-specific.
+3. Record the origin in the package CHANGELOG ("ported from spatial `lib/audio/proceduralSounds`").
+4. Publish, then switch the host to the package via a one-line re-export, then delete the shim.

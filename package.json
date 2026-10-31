@@ -1,0 +1,13 @@
+{
+  "name": "gamified3d-monorepo",
+  "private": true,
+  "description": "Game-style 3D and 2.5D scenes for the web with three.js: low-poly dioramas, figures and ambient life. Companion to gamifiedUI.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carsonhung/gamified3D.git"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

@@ -1,0 +1,16 @@
+---
+description: gamified3D code style
+alwaysApply: true
+---
+
+# Code style
+
+- 2-space indent, single quotes and semicolons in TS.
+- Comment WHY, not WHAT. Reserve comments for constraints the code can't show (WebGL quirks,
+  maths constants, disposal rules).
+- TS: `PascalCase` types, `camelCase` verb-first functions, `UPPER_SNAKE_CASE` constants,
+  boolean names start with `is` / `has` / `should` / `can`. No `any`. No magic numbers in logic:
+  name them as constants at the top of the module.
+- Every geometry, material and texture a module creates is disposed by that module's `dispose()`.
+- Never swallow errors; throw with a `[module]` prefix.
+- Docs and READMEs: plain sentences, tables only for short facts.
