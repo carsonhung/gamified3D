@@ -1,0 +1,29 @@
+{
+  "name": "gamified3d-core",
+  "version": "0.1.0",
+  "description": "Engine-agnostic building blocks for grid-based 2D / 2.5D games: typed event bus, grid pathfinding, rebindable action input, tap-to-move routes and a projection contract.",
+  "license": "Apache-2.0",
+  "author": "Carson Hung (https://github.com/carsonhung)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carsonhung/gamified3D.git",
+    "directory": "packages/gamified3d-core"
+  },
+  "keywords": ["game", "grid", "pathfinding", "input", "event-bus", "2.5d", "rpg"],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "sideEffects": false,
+  "files": ["dist", "LICENSE", "NOTICE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "node ../../scripts/check-dist.mjs ."
+  }
+}

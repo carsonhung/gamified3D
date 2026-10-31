@@ -10,6 +10,10 @@ a 2.5D interface: how the camera is set up, how a pointer or a keyboard picks an
 DOM panel follows a 3D point, how things move without breaking reduced motion, and how a screen
 reader understands the scene.
 
+It is also the base layer for grid-based story games such as StoryTelling: `gamified3d-core`
+holds the engine-agnostic game logic (event bus, grid pathfinding, rebindable input, tap-to-move
+routes and the projection contract), so a Phaser 2D view and a three.js 2.5D view can share it.
+
 ## Planned modules
 
 - **Stage**: renderer, resize, pixel ratio and render-on-demand, with isometric, dimetric and
@@ -28,6 +32,7 @@ reader understands the scene.
 
 | Package | State |
 |---|---|
+| [`gamified3d-core`](packages/gamified3d-core) | 0.1.0, built, not yet on npm. Engine-agnostic: event bus, grid, input, routes |
 | [`gamified3d-stage`](packages/gamified3d-stage) | 0.1.0, built, not yet on npm |
 | [`gamified3d-interaction`](packages/gamified3d-interaction) | 0.1.0, built, not yet on npm |
 
