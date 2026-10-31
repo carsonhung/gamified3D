@@ -5,10 +5,13 @@ alwaysApply: true
 
 # gamified3D overview
 
-Game-style 3D / 2.5D scenes for the web on three.js. Companion to gamifiedUI
-(c:\Users\kason\Desktop\gamifiedUI): gamifiedUI owns CSS UI (HUD, panels, icons, CSS-only `gx-iso`
-scenes); gamified3D owns anything that needs WebGL. Never put CSS components here, and never put
-three.js code in gamifiedUI.
+A UI/UX framework for 2.5D game-style interfaces on three.js. Companion to gamifiedUI
+(c:\Users\kason\Desktop\gamifiedUI): gamifiedUI owns CSS components (HUD, panels, icons and
+CSS-only `gx-iso` scenes); gamified3D owns the WebGL stage those components sit on. Never put CSS
+components here, and never put three.js code in gamifiedUI.
+
+Scope is interface building blocks (stage, grid, interaction, anchors, motion, camera controls,
+accessibility), not game content. Terrain, characters and world simulation do not belong here.
 
 ## Layout (npm workspaces)
 
@@ -17,17 +20,13 @@ three.js code in gamifiedUI.
 
 ## Design contract
 
-- Renderers take state in (actor positions, time of day, weather) and draw it; they hold no game
-  logic and do not depend on Phaser or any framework.
-- Respect reduced motion: ambient animation (water, smoke, villagers) stops when the host passes
-  `isReducedMotion`.
-- Palettes default to gamifiedUI's era themes so the HUD and the world match.
+- Modules are framework-agnostic and hold no game logic; hosts pass state in and get events out.
+- Every interaction works with pointer, touch and keyboard alone; gamepad is additive.
+- Interactive 3D objects have a DOM counterpart for focus order and screen readers.
+- Motion reads gamifiedUI's motion tokens and stops under `prefers-reduced-motion` and
+  `data-gx-motion="reduce"`.
+- DOM overlays use gamifiedUI classes and themes, so the stage and the HUD match.
 
 ## Commands (PowerShell; no `&&` chaining in docs)
 
 - `npm install`.
-
-## Planned packages
-
-- `gamified3d-diorama` - low-poly diorama renderer, ported from StoryTelling
-  `frontend/src/game/views/lowPolyView.ts` and `frontend/src/game/lowpoly/*`.

@@ -1,7 +1,7 @@
 {
   "name": "gamified3d-monorepo",
   "private": true,
-  "description": "Game-style 3D and 2.5D scenes for the web with three.js: low-poly dioramas, figures and ambient life. Companion to gamifiedUI.",
+  "description": "UI/UX framework for 2.5D game-style interfaces on three.js: stage, grid, interaction, DOM anchors, motion and accessibility. Companion to gamifiedUI.",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
