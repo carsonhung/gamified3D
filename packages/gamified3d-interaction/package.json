@@ -1,0 +1,32 @@
+{
+  "name": "gamified3d-interaction",
+  "version": "0.1.0",
+  "description": "Hover, select and keyboard navigation for three.js objects in 2.5D game UI, with a hidden button mirror for screen readers.",
+  "license": "Apache-2.0",
+  "author": "Carson Hung (https://github.com/carsonhung)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carsonhung/gamified3D.git",
+    "directory": "packages/gamified3d-interaction"
+  },
+  "keywords": ["three", "raycast", "accessibility", "keyboard", "2.5d", "game-ui"],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "sideEffects": false,
+  "files": ["dist", "LICENSE", "NOTICE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "node ../../scripts/check-dist.mjs ."
+  },
+  "peerDependencies": {
+    "three": ">=0.160.0"
+  }
+}

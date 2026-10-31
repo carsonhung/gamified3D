@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>gamified3D demo</title>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body class="min-h-dvh bg-gx-ink font-gx-body text-gx-on-surface">
+    <div class="mx-auto max-w-7xl p-4 sm:p-8">
+      <header class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <h1 class="font-gx text-xl leading-relaxed text-gx-accent sm:text-2xl">gamified3D</h1>
+          <p class="mt-2 max-w-prose">A 2.5D stage and interaction layer for gamifiedUI, built on three.js.</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <button id="motion-toggle" class="gx-btn gx-btn-ghost gx-btn-sm" aria-pressed="false">Reduce motion</button>
+          <a class="gx-btn gx-btn-ghost gx-btn-sm" href="https://github.com/carsonhung/gamified3D">GitHub</a>
+        </div>
+      </header>
+
+      <main class="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_20rem]">
+        <section class="gx-panel min-w-0" aria-labelledby="board-title">
+          <h2 id="board-title" class="gx-panel-title">Board</h2>
+          <div id="stage" class="h-[60dvh] min-h-80 w-full"></div>
+        </section>
+
+        <div class="flex flex-col gap-6">
+          <section class="gx-panel" aria-labelledby="selected-title">
+            <h2 id="selected-title" class="gx-panel-title">Selected</h2>
+            <div aria-live="polite">
+              <p id="selected-name" class="font-gx text-sm text-gx-accent">Nothing selected</p>
+              <p id="selected-description" class="mt-2">Click, tap or press Enter on an object.</p>
+            </div>
+            <p class="mt-4 text-sm text-gx-on-surface/70">Pointing at: <span id="hovered-name">nothing</span></p>
+          </section>
+
+          <section class="gx-panel" aria-labelledby="camera-title">
+            <h2 id="camera-title" class="gx-panel-title">Camera</h2>
+            <div class="flex flex-wrap gap-2" role="group" aria-label="Camera preset">
+              <button class="gx-btn gx-btn-sm" data-preset="isometric" aria-pressed="true">Isometric</button>
+              <button class="gx-btn gx-btn-sm" data-preset="dimetric" aria-pressed="false">Dimetric</button>
+              <button class="gx-btn gx-btn-sm" data-preset="tilted" aria-pressed="false">Tilted</button>
+            </div>
+            <button id="pixel-toggle" class="gx-btn gx-btn-ghost gx-btn-sm mt-4" aria-pressed="false">Pixel art</button>
+          </section>
+
+          <section class="gx-panel" aria-labelledby="keys-title">
+            <h2 id="keys-title" class="gx-panel-title">Controls</h2>
+            <ul class="flex list-disc flex-col gap-1 pl-5 text-sm">
+              <li>Click or tap an object to select it.</li>
+              <li>Tab onto the board, then use the arrow keys to move.</li>
+              <li>Enter or Space selects. Escape clears.</li>
+              <li>The gate is locked: it can be focused but not selected.</li>
+            </ul>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

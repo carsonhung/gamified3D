@@ -16,6 +16,8 @@ accessibility), not game content. Terrain, characters and world simulation do no
 ## Layout (npm workspaces)
 
 - `packages/*` - one package per module, each with its own `LICENSE`, `NOTICE` and `CHANGELOG.md`.
+  Built with plain `tsc` from the shared `tsconfig.base.json`; tests in `test/*.test.mjs` import `dist/`.
+- `demo/` - Vite + Tailwind playground using gamifiedui-css for the HUD.
 - `three` is a peer dependency of every package, never bundled.
 
 ## Design contract
@@ -29,4 +31,7 @@ accessibility), not game content. Terrain, characters and world simulation do no
 
 ## Commands (PowerShell; no `&&` chaining in docs)
 
-- `npm install`.
+- `npm install`, `npm test` (stale-dist checks, `node --test`, demo type check),
+  `npm run build:packages`, `npm run demo` (Vite, aliased to package `src/`).
+- Every package `dist/` is committed; rebuild and commit it with source changes.
+- `demo/` must show every module and every input path (pointer, touch, keyboard).

@@ -8,6 +8,18 @@
     "url": "https://github.com/carsonhung/gamified3D.git"
   },
   "workspaces": [
-    "packages/*"
-  ]
+    "packages/*",
+    "demo"
+  ],
+  "scripts": {
+    "build": "npm run build:packages && npm run build --workspace=gamified3d-demo",
+    "build:packages": "npm run build --workspace=gamified3d-stage && npm run build --workspace=gamified3d-interaction",
+    "test": "npm run check --workspace=gamified3d-stage && npm run check --workspace=gamified3d-interaction && node --test \"packages/*/test/*.test.mjs\" && npm run lint --workspace=gamified3d-demo",
+    "demo": "npm run dev --workspace=gamified3d-demo"
+  },
+  "devDependencies": {
+    "@types/three": "^0.187.0",
+    "three": "^0.187.0",
+    "typescript": "~5.9.3"
+  }
 }

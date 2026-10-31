@@ -21,11 +21,29 @@ reader understands the scene.
 - **Motion**: stepped and smooth tweens that read gamifiedUI's motion tokens and stop under
   reduced motion.
 - **Camera controls**: pan, zoom and 90° snapped rotation with limits.
-- **Accessibility**: a DOM mirror of interactive objects, so focus order and screen readers work.
+- **Accessibility**: announcements, scene descriptions and focus management beyond what the
+  interaction module's hidden buttons already give.
 
 ## Status
 
-Early setup. No packages are published yet.
+| Package | State |
+|---|---|
+| [`gamified3d-stage`](packages/gamified3d-stage) | 0.1.0, built, not yet on npm |
+| [`gamified3d-interaction`](packages/gamified3d-interaction) | 0.1.0, built, not yet on npm |
+
+The other modules are planned.
+
+## Development
+
+```powershell
+npm install
+npm run demo
+npm test
+```
+
+`npm run demo` serves the package sources directly. `npm test` checks that each committed
+`dist/` matches a fresh build, runs the unit tests and type-checks the demo. Run
+`npm run build:packages` after changing a package and commit the new `dist/` with it.
 
 ## License
 

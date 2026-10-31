@@ -1,0 +1,27 @@
+{
+  "name": "gamified3d-demo",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Live demo of gamified3D.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/press-start-2p": "^5.1.0",
+    "gamified3d-interaction": "*",
+    "gamified3d-stage": "*",
+    "gamifiedui-css": "^0.1.0",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "@types/three": "^0.187.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "~5.9.3",
+    "vite": "^6.0.0"
+  }
+}
