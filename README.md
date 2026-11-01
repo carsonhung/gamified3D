@@ -32,7 +32,7 @@ routes and the projection contract), so a Phaser 2D view and a three.js 2.5D vie
 
 | Package | State |
 |---|---|
-| [`gamified3d-core`](packages/gamified3d-core) | 0.1.0, built, not yet on npm. Engine-agnostic: event bus, grid, input, routes |
+| [`gamified3d-core`](packages/gamified3d-core) | 0.1.0 [on npm](https://www.npmjs.com/package/gamified3d-core). Engine-agnostic: event bus, grid, input, routes |
 | [`gamified3d-stage`](packages/gamified3d-stage) | 0.1.0, built, not yet on npm |
 | [`gamified3d-interaction`](packages/gamified3d-interaction) | 0.1.0, built, not yet on npm |
 

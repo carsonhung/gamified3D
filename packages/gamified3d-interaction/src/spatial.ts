@@ -18,7 +18,7 @@ const DIRECTION_VECTORS: Readonly<Record<Direction, ScreenPoint>> = {
   right: { x: 1, y: 0 },
 };
 
-// A 60° half-cone, so arrow keys still reach isometric neighbours that sit about 30° off axis.
+// A 60ï¿½ half-cone, so arrow keys still reach isometric neighbours that sit about 30ï¿½ off axis.
 const CONE_SLOPE = Math.tan(Math.PI / 3);
 // Sideways drift costs more than distance, so the most "in line" candidate wins ties.
 const PERPENDICULAR_WEIGHT = 2;
